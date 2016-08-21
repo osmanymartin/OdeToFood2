@@ -11,12 +11,30 @@ namespace OdeToFood2.Controllers
         //
         // GET: /Cuisine/
 
+        [HttpPost]
         public ActionResult Search(string name = "Cuban")
         {
             //var name = RouteData.Values["name"];
             var message = Server.HtmlEncode(name);
 
             return Content(String.Format("Hello {0} Cuisine!!", name));
+
+            //return RedirectToAction("Index", "Home", new { name = name });
+
+            //return File(Server.MapPath("~/Content/Site.css"), "text/css");
+
+            //return Json(new { message = "Cuisine " + message, name = "Chef Osmany" }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        [Authorize]
+        public ActionResult Search()
+        {
+            //var name = RouteData.Values["name"];
+
+            throw new Exception("Something terrible has happend!!");
+
+            return Content("Get Cuisine Search!!");
 
         }
 
