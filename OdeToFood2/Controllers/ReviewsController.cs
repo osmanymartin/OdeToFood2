@@ -133,7 +133,8 @@ namespace OdeToFood2.Controllers
             },
             new RestaurantReview {
                 Id=4,
-                Name="Versailles Restaurant",
+                //Name="<script>alert('Grrrrrrr catch you!!')</script>",
+                Name="Versailles restaurant",
                 City="Miami",
                 Country="USA",
                 Rating=8
