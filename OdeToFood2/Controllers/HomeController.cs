@@ -16,7 +16,7 @@ namespace OdeToFood2.Controllers
         {
             var model = _db.Restaurants.ToList();
 
-            return View();
+            return View(model);
 
 
             //var controller = RouteData.Values["controller"];
