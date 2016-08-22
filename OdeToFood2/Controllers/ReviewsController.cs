@@ -74,9 +74,13 @@ namespace OdeToFood2.Controllers
         {
             try
             {
-                // TODO: Add update logic here
+                var review = _reviews.Single(r => r.Id == id);
+                if (TryUpdateModel(review))
+                {
+                    return RedirectToAction("Index");
+                }
 
-                return RedirectToAction("Index");
+                return View(review);
             }
             catch
             {
