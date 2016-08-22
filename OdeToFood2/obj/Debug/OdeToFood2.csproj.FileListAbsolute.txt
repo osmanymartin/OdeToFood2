@@ -84,3 +84,5 @@ c:\users\osman\documents\visual studio 2013\Projects\OdeToFood2\OdeToFood2\bin\z
 c:\users\osman\documents\visual studio 2013\Projects\OdeToFood2\OdeToFood2\obj\Debug\OdeToFood2.csprojResolveAssemblyReference.cache
 c:\users\osman\documents\visual studio 2013\Projects\OdeToFood2\OdeToFood2\obj\Debug\OdeToFood2.dll
 c:\users\osman\documents\visual studio 2013\Projects\OdeToFood2\OdeToFood2\obj\Debug\OdeToFood2.pdb
+C:\Users\OSMAN\documents\visual studio 2013\Projects\OdeToFood2\OdeToFood2\obj\Debug\OdeToFood2.Migrations.InitialCreate.resources
+C:\Users\OSMAN\documents\visual studio 2013\Projects\OdeToFood2\OdeToFood2\obj\Debug\OdeToFood2.csproj.GenerateResource.Cache

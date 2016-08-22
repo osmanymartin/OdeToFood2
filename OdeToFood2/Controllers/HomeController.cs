@@ -14,7 +14,19 @@ namespace OdeToFood2.Controllers
 
         public ActionResult Index()
         {
-            var model = _db.Restaurants.ToList();
+            var model = _db.Restaurants
+                .OrderByDescending(r => r.Reviews.Average(re => re.Rating))
+                .Take(10)
+                .Select(res =>
+                    new RestaurantListViewModel
+                    {
+                        Id = res.Id,
+                        Name = res.Name,
+                        City = res.City,
+                        Country = res.Country,
+                        CountOfReviews = res.Reviews.Count()
+                    });
+                //.ToList();
 
             return View(model);
 
