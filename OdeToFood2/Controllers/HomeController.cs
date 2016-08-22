@@ -9,17 +9,24 @@ namespace OdeToFood2.Controllers
 {
     public class HomeController : Controller
     {
+
+        OdeToFood2Db _db = new OdeToFood2Db();
+
         public ActionResult Index()
         {
-            var controller = RouteData.Values["controller"];
-            var action = RouteData.Values["action"];
-            var id = RouteData.Values["id"];
-
-            var message = String.Format("{0}::{1} {2}", controller, action, id);
-
-            ViewBag.Message = message;
+            var model = _db.Restaurants.ToList();
 
             return View();
+
+
+            //var controller = RouteData.Values["controller"];
+            //var action = RouteData.Values["action"];
+            //var id = RouteData.Values["id"];
+
+            //var message = String.Format("{0}::{1} {2}", controller, action, id);
+
+            //ViewBag.Message = message;
+
         }
 
         public ActionResult About()
@@ -39,6 +46,16 @@ namespace OdeToFood2.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (_db != null)
+            {
+                _db.Dispose();
+            }
+
+            base.Dispose(disposing);
         }
     }
 }
