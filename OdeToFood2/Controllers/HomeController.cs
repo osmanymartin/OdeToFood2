@@ -12,10 +12,11 @@ namespace OdeToFood2.Controllers
 
         OdeToFood2Db _db = new OdeToFood2Db();
 
-        public ActionResult Index()
+        public ActionResult Index(string searchTerm = null)
         {
             var model = _db.Restaurants
                 .OrderByDescending(r => r.Reviews.Average(re => re.Rating))
+                .Where(r => searchTerm == null || r.Name.StartsWith(searchTerm))
                 .Take(10)
                 .Select(res =>
                     new RestaurantListViewModel
@@ -26,7 +27,7 @@ namespace OdeToFood2.Controllers
                         Country = res.Country,
                         CountOfReviews = res.Reviews.Count()
                     });
-                //.ToList();
+            //.ToList();
 
             return View(model);
 
