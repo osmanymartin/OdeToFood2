@@ -18,7 +18,7 @@ namespace OdeToFood2.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Restaurants.ToList());
+            return View(db.Restaurants.Take(10).ToList());
         }
 
         //

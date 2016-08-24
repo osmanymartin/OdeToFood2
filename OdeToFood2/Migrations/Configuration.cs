@@ -28,6 +28,13 @@ namespace OdeToFood2.Migrations
                         new RestaurantReview { Rating = 9, Body = "Riquisimo - Delicius", ReviewerName = "Osmany San Martin" } }
                 }
                 );
+
+            for (int i = 0; i < 1000; i++)
+            {
+                context.Restaurants.AddOrUpdate(r => r.Name,
+                    new Restaurant { Name = i.ToString(), City = "Nowhere", Country = "USA" }
+               );
+            }
         }
     }
 }
