@@ -29,6 +29,12 @@ namespace OdeToFood2.Controllers
                     });
             //.ToList();
 
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_Restaurants", model);
+            }
+
+
             return View(model);
 
 
